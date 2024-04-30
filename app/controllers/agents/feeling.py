@@ -1,7 +1,5 @@
 from flask import Blueprint, request, jsonify
-
 from app.services.agents.feeling import recognize_feeling_from_image
-
 feeling_routes = Blueprint('feeling', __name__, url_prefix='/feeling')
 
 @feeling_routes.route('/', methods=['POST'])
