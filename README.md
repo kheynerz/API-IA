@@ -32,3 +32,15 @@ Image -> Image.jpg
 ```bash
 http://localhost:5000/api/feeling
 ```
+# Machine Learning Models
+
+## Bitcoin prediction
+
+### POST /api/model/bitcoin
+
+ContentType: application/json;  
+
+#### URL
+```bash
+http://localhost:5000/api/model/bitcoin
+```
