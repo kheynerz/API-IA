@@ -39,6 +39,13 @@ http://localhost:5000/api/feeling
 ### POST /api/model/bitcoin
 
 ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `volume` | required | int  | A numerical variable representing the volume of Bitcoin transactions carried out during the corresponding day.                                                                     |
+|     `market_cap` | required | int  | A numerical variable indicating the market capitalization of Bitcoin at the end of the corresponding day. |
+
 
 #### URL
 ```bash
