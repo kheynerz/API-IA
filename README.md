@@ -66,3 +66,29 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/cirrhosis
 ```
+
+## Cirrhosis Classification
+
+### POST /api/model/cirrhosis
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `fixed_acidity` | required | float64  | Fixed acidity of the wine.                                                                     |
+|     `volatile_acidity` | required | float64  | Volatile acidity of the wine. |
+|     `citric_acid` | required | float64  | Citric acid of the wine. |
+|     `residual_sugar` | required | float64  | Residual sugar in the wine. |
+|     `chlorides` | required | float64  | Chlorides in the wine. |
+|     `free_sulfur_dioxide` | required | float64  |  Free sulfur dioxide in the wine. |
+|     `total_sulfur_dioxide` | required | float64  |  Total sulfur dioxide in the wine. |
+|     `density` | required | float64  | Density of the wine. |
+|     `pH` | required | float64  | pH level of the wine. |
+|     `sulphates` | required | float64  | Sulphates in the wine. |
+|     `alcohol` | required | float64  | Alcohol content in the wine. |
+
+#### URL
+```bash
+http://localhost:5000/api/model/wine
+```
