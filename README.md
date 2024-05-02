@@ -169,8 +169,8 @@ ContentType: application/json;
 |          Name | Required |  Type   | Description                                                                                                                                                           |
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SNo               | required | int     | Serial number, unique identifier of the observation.     |
-| ObservationDate   | required | string  | Date of the observation in MM/DD/YYYY format.             |
-| Province/State    | required | string  | Province or state of the observation (could be empty when missing). |
+| ObservationDate   | required | string  | Date of the observation in number format.             |
+| Province/State    | required | string  | Province or state of the observation. |
 | Country/Region    | required | string  | Country of observation.                                   |
 | Last Update       | required | string  | Time in UTC at which the row is updated for the given province or country. (Not standardised and so please clean before using it). |
 | Confirmed         | required | int     | Cumulative number of confirmed cases till that date.      |
