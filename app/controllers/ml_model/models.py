@@ -27,7 +27,7 @@ def cirrhosis_classification():
     required_values = ['cholesterol', 'albumin', 'copper', 'alk_phos', 'tryglicerides', 'platelets', 'prothrombin']
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
-    classification = classificate_cirrhosis(data)
+    classification = classificate_cirrhosis(data, required_values)
     return jsonify(classification)
 
 
@@ -38,7 +38,7 @@ def wine_quality_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    classification = classificate_wine_quality(data)
+    classification = classificate_wine_quality(data, required_values)
     return jsonify(classification)
 
 
@@ -66,7 +66,7 @@ def stroke_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    classification = classificate_stroke(data)
+    classification = classificate_stroke(data, required_values)
     return jsonify(classification)
 
 @model_routes.route('/phone_company_churn', methods=['POST'])
@@ -96,7 +96,7 @@ def phone_company_churn_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    classification = classificate_phone_company_churn(data)
+    classification = classificate_phone_company_churn(data, required_values)
     return jsonify(classification)
 
 @model_routes.route('/covid', methods=['POST'])
@@ -106,7 +106,7 @@ def covid_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    prediction = predict_covid_recovered(data)
+    prediction = predict_covid_recovered(data, required_values)
     return jsonify(prediction)
 
 
@@ -118,7 +118,7 @@ def bmi_prediction():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    prediction = predict_bmi(data)
+    prediction = predict_bmi(data, required_values)
     return jsonify(prediction)
 
 
@@ -131,7 +131,7 @@ def car_price_prediction():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    prediction = predict_car_price(data)
+    prediction = predict_car_price(data, required_values)
     return jsonify(prediction)
 
 
@@ -157,5 +157,5 @@ def avocado_price_prediction():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    prediction = predict_avocado_price(data)
+    prediction = predict_avocado_price(data, required_values)
     return jsonify(prediction)
