@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.services.ml_model.classificate_cirrhosis import classificate_cirrhosis
+from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
 from app.utils.validate_body import validate_body
@@ -33,4 +34,32 @@ def wine_quality_classification():
     if errors: return jsonify(errors)
 
     classification = classificate_wine_quality(data)
+    return jsonify(classification)
+
+
+@model_routes.route('/stroke', methods=['POST'])
+def stroke_classification():
+    data = request.json
+    required_values = [
+        "age",
+        "hypertension",
+        "heart_disease",
+        "avg_glucose_level",
+        "bmi",
+        "gender_Male",
+        "gender_Other",
+        "ever_married_Yes",
+        "work_type_Never_worked",
+        "work_type_Private",
+        "work_type_Self-employed",
+        "work_type_children",
+        "Residence_type_Urban",
+        "smoking_status_formerly_smoked",
+        "smoking_status_never_smoked",
+        "smoking_status_smokes"
+    ]
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    classification = classificate_stroke(data)
     return jsonify(classification)
