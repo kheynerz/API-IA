@@ -276,8 +276,6 @@ ContentType: application/json;
 
 |          Name | Required |  Type   | Description                                                                                                                                                           |
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Name | Required |  Type  | Description                                           |
-|----------:|:--------:|:------:|-------------------------------------------------------|
 |        AST| Required | float  | Aspartate Aminotransferase                            |
 |        BIL| Required | float  | Bilirubin                                             |
 |        GGT| Required | float  | Gamma-Glutamyl Transferase      
