@@ -267,3 +267,21 @@ ContentType: application/json;
 http://localhost:5000/api/model/avocado_price
 ```
 
+## Hepatitis C Classification
+
+### POST /api/model/hepatitis
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      Name | Required |  Type  | Description                                           |
+|----------:|:--------:|:------:|-------------------------------------------------------|
+|        AST| Required | float  | Aspartate Aminotransferase                            |
+|        BIL| Required | float  | Bilirubin                                             |
+|        GGT| Required | float  | Gamma-Glutamyl Transferase      
+#### URL
+```bash
+http://localhost:5000/api/model/hepatitis
+```
