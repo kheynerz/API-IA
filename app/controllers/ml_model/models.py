@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.services.ml_model.classificate_cirrhosis import classificate_cirrhosis
+from app.services.ml_model.classificate_hepatitis import classificate_hepatitis
 from app.services.ml_model.classificate_phone_company import classificate_phone_company_churn
 from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
@@ -159,3 +160,16 @@ def avocado_price_prediction():
 
     prediction = predict_avocado_price(data, required_values)
     return jsonify(prediction)
+
+
+
+@model_routes.route('/hepatitis', methods=['POST'])
+def hepatitis_classification():
+    data = request.json
+    required_values = ["AST", "BIL", "GGT"]
+
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    classification = classificate_hepatitis(data, required_values)
+    return jsonify(classification)
