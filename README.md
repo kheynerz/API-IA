@@ -56,11 +56,11 @@ ContentType: application/json;
 |          Name | Required |  Type   | Description                                                                                                                                                           |
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     `cholesterol` | required | int  | Serum cholesterol level in mg/dl.                                                                     |
-|     `albumin` | required | float64  | Nivel de albúmina en gm/dl. |
-|     `copper` | required | int  | Cobre urinario en ug/día. |
-|     `alk_phos` | required | float64  | Fosfatasa alcalina en U/litro. |
-|     `tryglicerides` | required | int  | Nivel de triglicéridos en mg/dl. |
-|     `prothrombin` | required | float64  | Tiempo de protrombina en segundos. |
+|     `albumin` | required | float64  | Albumin level in gm/dl. |
+|     `copper` | required | int  | Urinary copper in ug/day. |
+|     `alk_phos` | required | float64  | Alkaline phosphatase in U/liter. |
+|     `tryglicerides` | required | int  | Triglyceride level in mg/dl. |
+|     `prothrombin` | required | float64  | Prothrombin time in seconds. |
 
 #### URL
 ```bash
