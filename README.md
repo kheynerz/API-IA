@@ -158,3 +158,25 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/phone_company_churn
 ```
+
+## Covid Recovered People Prediction
+
+### POST /api/model/covid
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SNo               | required | int     | Serial number, unique identifier of the observation.     |
+| ObservationDate   | required | string  | Date of the observation in number format.             |
+| Province/State    | required | string  | Province or state of the observation. |
+| Country/Region    | required | string  | Country of observation.                                   |
+| Last Update       | required | string  | Time in UTC at which the row is updated for the given province or country. (Not standardised and so please clean before using it). |
+| Confirmed         | required | int     | Cumulative number of confirmed cases till that date.      |
+| Deaths            | required | float   | Cumulative number of deaths till that date.               |
+
+#### URL
+```bash
+http://localhost:5000/api/model/covid
+```
