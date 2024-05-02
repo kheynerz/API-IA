@@ -46,8 +46,23 @@ ContentType: application/json;
 |     `volume` | required | int  | A numerical variable representing the volume of Bitcoin transactions carried out during the corresponding day.                                                                     |
 |     `market_cap` | required | int  | A numerical variable indicating the market capitalization of Bitcoin at the end of the corresponding day. |
 
+## Cirrhosis Classification
+
+### POST /api/model/cirrhosis
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `cholesterol` | required | int  | Serum cholesterol level in mg/dl.                                                                     |
+|     `albumin` | required | float64  | Nivel de albúmina en gm/dl. |
+|     `copper` | required | int  | Cobre urinario en ug/día. |
+|     `alk_phos` | required | float64  | Fosfatasa alcalina en U/litro. |
+|     `tryglicerides` | required | int  | Nivel de triglicéridos en mg/dl. |
+|     `prothrombin` | required | float64  | Tiempo de protrombina en segundos. |
 
 #### URL
 ```bash
-http://localhost:5000/api/model/bitcoin
+http://localhost:5000/api/model/cirrhosis
 ```
