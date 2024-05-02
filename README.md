@@ -238,9 +238,9 @@ ContentType: application/json;
 http://localhost:5000/api/model/car_price
 ```
 
-## Car Price Prediction
+## Avocado Price Prediction
 
-### POST /api/model/car_price
+### POST /api/model/avocado_price
 
 ContentType: application/json;  
 **Body**
@@ -264,6 +264,6 @@ ContentType: application/json;
 
 #### URL
 ```bash
-http://localhost:5000/api/model/car_price
+http://localhost:5000/api/model/avocado_price
 ```
 
