@@ -4,6 +4,7 @@ from app.services.ml_model.classificate_phone_company import classificate_phone_
 from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
+from app.services.ml_model.predict_bmi import predict_bmi
 from app.services.ml_model.predict_covid_recovered import predict_covid_recovered
 from app.utils.validate_body import validate_body
 
@@ -103,5 +104,17 @@ def covid_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    classification = predict_covid_recovered(data)
-    return jsonify(classification)
+    prediction = predict_covid_recovered(data)
+    return jsonify(prediction)
+
+
+@model_routes.route('/bmi', methods=['POST'])
+def bmi_prediction():
+    data = request.json
+    required_values = ["density", "age", "weight", "height", "neck", "chest", "abdomen", "hip", "thigh", "knee", "ankle", "biceps", "forearm", "wrist"]
+
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    prediction = predict_bmi(data)
+    return jsonify(prediction)
