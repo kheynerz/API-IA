@@ -212,3 +212,28 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/bmi
 ```
+
+
+## Car Price Prediction
+
+### POST /api/model/car_price
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Key            | Required | Type   | Description                                                            |
+|----------------|----------|--------|-------------------------------------------------------------------------|
+| Year           | Required | int64   | Year                                                                   |
+| Selling_Price  | Required | float64 | Selling Price                                                          |
+| Kms_Driven     | Required | int64   | Kilometers Driven                                                      |
+| Fuel_Type      | Required | int64   | Fuel Type (Petrol, Diesel, or Other)                                   |
+| Seller_Type    | Required | int64   | Seller Type (Dealer or Individual)                                     |
+| Transmission   | Required | int64   | Transmission Type (Manual or Automatic)                                |
+| Owner          | Required | int64   | Number of Previous Owners        
+
+#### URL
+```bash
+http://localhost:5000/api/model/car_price
+```
