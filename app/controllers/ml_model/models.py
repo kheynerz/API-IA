@@ -5,6 +5,7 @@ from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
 from app.services.ml_model.predict_bmi import predict_bmi
+from app.services.ml_model.predict_car_price import predict_car_price
 from app.services.ml_model.predict_covid_recovered import predict_covid_recovered
 from app.utils.validate_body import validate_body
 
@@ -117,4 +118,17 @@ def bmi_prediction():
     if errors: return jsonify(errors)
 
     prediction = predict_bmi(data)
+    return jsonify(prediction)
+
+
+
+@model_routes.route('/car_price', methods=['POST'])
+def car_price_prediction():
+    data = request.json
+    required_values = ["year", "selling_price", "kms_driven", "fuel_type", "seller_type", "transmission", "owner"]
+
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    prediction = predict_car_price(data)
     return jsonify(prediction)
