@@ -69,7 +69,7 @@ http://localhost:5000/api/model/cirrhosis
 
 ## Wine Quality Classification
 
-### POST /api/model/cirrhosis
+### POST /api/model/wine
 
 ContentType: application/json;  
 **Body**
@@ -91,4 +91,36 @@ ContentType: application/json;
 #### URL
 ```bash
 http://localhost:5000/api/model/wine
+```
+
+## Stroke Classification (ictus)
+
+### POST /api/model/stroke
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `age` | required | float64  | Age of the patient. |
+|     `hypertension` | required | int64  | 0 if the patient doesn't have hypertension, 1 if the patient has hypertension. |
+|     `heart_disease` | required | int64  | 0 if the patient doesn't have any heart diseases, 1 if the patient has a heart disease. |
+|     `avg_glucose_level` | required | float64  | Average glucose level in blood. |
+|     `bmi` | required | float64  | Body mass index. |
+|     `gender_Male` | required | bool  | True if the patient is male, False otherwise. |
+|     `gender_Other` | required | bool  | True if the patient's gender is Other, False otherwise. |
+|     `ever_married_Yes` | required | bool  | True if the patient is ever married, False otherwise. |
+|     `work_type_Never_worked` | required | bool  | True if the patient's work type is Never worked, False otherwise. |
+|     `work_type_Private` | required | bool  | True if the patient's work type is Private, False otherwise. |
+|     `work_type_Self-employed` | required | bool  | True if the patient's work type is Self-employed, False otherwise. |
+|     `work_type_children` | required | bool  | True if the patient's work type is children, False otherwise. |
+|     `Residence_type_Urban` | required | bool  | True if the patient's residence type is Urban, False otherwise. |
+|     `smoking_status_formerly_smoked` | required | bool  | True if the patient formerly smoked, False otherwise. |
+|     `smoking_status_never_smoked` | required | bool  | True if the patient never smoked, False otherwise. |
+|     `smoking_status_smokes` | required | bool  | True if the patient smokes, False otherwise. |
+
+
+#### URL
+```bash
+http://localhost:5000/api/model/stroke
 ```
