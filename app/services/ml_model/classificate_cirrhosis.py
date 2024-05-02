@@ -13,5 +13,6 @@ def classificate_cirrhosis(data):
     test_data = np.array([[cholesterol, albumin, copper, alk_phos, tryglicerides, platelets, prothrombin]])
 
     classification = model.predict(test_data)[0]
+    print(str(classification))
 
     return {"prediction" : str(classification)}
