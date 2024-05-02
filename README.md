@@ -124,3 +124,37 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/stroke
 ```
+
+## Phone Company Churn Classification
+
+### POST /api/model/phone_company_churn
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `gender` | required | Categorical (binary)  | Male, Female |
+|     `SeniorCitizen` | required | Categorical (binary)  | Yes, No |
+|     `Partner` | required | Categorical (binary)  | Yes, No |
+|     `Dependents` | required | Categorical (binary)  | Yes, No |
+|     `tenure` | required | Numeric  | Number of months |
+|     `PhoneService` | required | Categorical (binary)  | Yes, No |
+|     `MultipleLines` | required | Categorical (nominal)  | Yes, No, No phone service |
+|     `InternetService` | required | Categorical (nominal)  | DSL, Fiber optic, No |
+|     `OnlineSecurity` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `OnlineBackup` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `DeviceProtection` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `TechSupport` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `StreamingTV` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `StreamingMovies` | required | Categorical (nominal)  | Yes, No, No internet service |
+|     `Contract` | required | Categorical (ordinal)  | Month-to-month, One year, Two year |
+|     `PaperlessBilling` | required | Categorical (binary)  | Yes, No |
+|     `PaymentMethod` | required | Categorical (nominal)  | Mailed check, Bank transfer (automatic), Electronic check, Credit card (automatic) |
+|     `MonthlyCharges` | required | Numeric  | Monthly charges |
+|     `TotalCharges` | required | Numeric  | Total accumulated charges |
+
+#### URL
+```bash
+http://localhost:5000/api/model/phone_company_churn
+```
