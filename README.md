@@ -67,7 +67,7 @@ ContentType: application/json;
 http://localhost:5000/api/model/cirrhosis
 ```
 
-## Cirrhosis Classification
+## Wine Quality Classification
 
 ### POST /api/model/cirrhosis
 
