@@ -237,3 +237,33 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/car_price
 ```
+
+## Avocado Price Prediction
+
+### POST /api/model/avocado_price
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   total_volume | Required  | float   | Total number of avocados sold                                                                           |
+|            4046| Required  | float   | Total number of avocados with PLU 4046 sold                                                            |
+|            4225| Required  | float   | Total number of avocados with PLU 4225 sold                                                            |
+|            4770| Required  | float   | Total number of avocados with PLU 4770 sold                                                            |
+|     total_bags | Required  | float   | Total number of bags                                                                                     |
+|      small_bags| Required  | float   | Total number of small bags                                                                              |
+|      large_bags| Required  | float   | Total number of large bags                                                                              |
+|     xlarge_bags| Required  | float   | Total number of extra large bags                                                                        |
+|           type | Required  | int     | Type of avocado (0 for conventional, 1 for organic)                                                    |
+|           year | Required  | int     | The year of observation                                                                                 |
+|          month | Required  | int     | The month of observation                                                                                |
+|         spring | Required  | int     | Indicator for spring season (1 for spring, 0 otherwise)                                                 |
+|         summer | Required  | int     | Indicator for summer season (1 for summer, 0 otherwise)                                                 |
+|           fall | Required  | int     | Indicator for fall season (1 for fall, 0 otherwise)                                                     |
+
+#### URL
+```bash
+http://localhost:5000/api/model/avocado_price
+```
+
