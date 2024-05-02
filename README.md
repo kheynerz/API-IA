@@ -180,3 +180,35 @@ ContentType: application/json;
 ```bash
 http://localhost:5000/api/model/covid
 ```
+
+
+## Body Fat Prediction
+
+### POST /api/model/bmi
+
+ContentType: application/json;  
+**Body**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Density          | required | float64 | Density determined from underwater weighing.                                                            |
+| Percent_body_fat | required | float64 | Percentage of body fat from Siri's equation.                                                            |
+| Age              | required | float64 | Age in years.                                                                                           |
+| Weight           | required | float64 | Weight in pounds.                                                                                       |
+| Height           | required | float64 | Height in inches.                                                                                       |
+| Neck             | required | float64 | Circumference of the neck in centimeters.                                                               |
+| Chest            | required | float64 | Circumference of the chest in centimeters.                                                              |
+| Abdomen          | required | float64 | Circumference of the abdomen 2 in centimeters.                                                          |
+| Hip              | required | float64 | Circumference of the hip in centimeters.                                                                |
+| Thigh            | required | float64 | Circumference of the thigh in centimeters.                                                              |
+| Knee             | required | float64 | Circumference of the knee in centimeters.                                                               |
+| Ankle            | required | float64 | Circumference of the ankle in centimeters.                                                              |
+| Biceps           | required | float64 | Circumference of the biceps (extended) in centimeters.                                                  |
+| Forearm          | required | float64 | Circumference of the forearm in centimeters.                                                            |
+| Wrist            | required | float64 | Circumference of the wrist in centimeters.                                                              |
+
+
+#### URL
+```bash
+http://localhost:5000/api/model/bmi
+```
