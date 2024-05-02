@@ -3,6 +3,7 @@ from app.services.ml_model.classificate_cirrhosis import classificate_cirrhosis
 from app.services.ml_model.classificate_phone_company import classificate_phone_company_churn
 from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
+from app.services.ml_model.predict_avocado_price import predict_avocado_price
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
 from app.services.ml_model.predict_bmi import predict_bmi
 from app.services.ml_model.predict_car_price import predict_car_price
@@ -131,4 +132,30 @@ def car_price_prediction():
     if errors: return jsonify(errors)
 
     prediction = predict_car_price(data)
+    return jsonify(prediction)
+
+
+@model_routes.route('/avocado_price', methods=['POST'])
+def avocado_price_prediction():
+    data = request.json
+    required_values = [
+        "total_volume",
+        "4046",
+        "4225",
+        "4770",
+        "total_bags",
+        "small_bags",
+        "large_bags",
+        "xlarge_bags",
+        "type",
+        "year",
+        "month",
+        "spring",
+        "summer",
+        "fall"
+    ]
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    prediction = predict_avocado_price(data)
     return jsonify(prediction)
