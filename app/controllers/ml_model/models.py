@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.services.ml_model.classificate_cirrhosis import classificate_cirrhosis
-from app.services.ml_model.classificate_phone_company import classificate_phone_company
+from app.services.ml_model.classificate_phone_company import classificate_phone_company_churn
 from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
@@ -65,8 +65,8 @@ def stroke_classification():
     classification = classificate_stroke(data)
     return jsonify(classification)
 
-@model_routes.route('/phone_company', methods=['POST'])
-def phone_company_classification():
+@model_routes.route('/phone_company_churn', methods=['POST'])
+def phone_company_churn_classification():
     data = request.json
     required_values = [
     "gender",
@@ -92,5 +92,5 @@ def phone_company_classification():
     errors = validate_body(data, required_values)
     if errors: return jsonify(errors)
 
-    classification = classificate_phone_company(data)
+    classification = classificate_phone_company_churn(data)
     return jsonify(classification)
