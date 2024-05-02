@@ -4,6 +4,7 @@ from app.services.ml_model.classificate_phone_company import classificate_phone_
 from app.services.ml_model.classificate_stroke import classificate_stroke
 from app.services.ml_model.classificate_wine_quality import classificate_wine_quality
 from app.services.ml_model.predict_bitcoin import predict_bitcoin
+from app.services.ml_model.predict_covid_recovered import predict_covid_recovered
 from app.utils.validate_body import validate_body
 
 model_routes = Blueprint('model', __name__, url_prefix='/model')
@@ -93,4 +94,14 @@ def phone_company_churn_classification():
     if errors: return jsonify(errors)
 
     classification = classificate_phone_company_churn(data)
+    return jsonify(classification)
+
+@model_routes.route('/covid', methods=['POST'])
+def covid_classification():
+    data = request.json
+    required_values = ["SNo", "ObservationDate", "Province/State", "Country/Region", "Last Update", "Confirmed", "Deaths"]
+    errors = validate_body(data, required_values)
+    if errors: return jsonify(errors)
+
+    classification = predict_covid_recovered(data)
     return jsonify(classification)

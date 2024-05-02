@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint
 
 # Blueprints
 from app.controllers.agents.feeling import feeling_routes
