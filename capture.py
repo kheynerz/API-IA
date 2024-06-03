@@ -42,4 +42,4 @@ if __name__ == "__main__":
     person_name = input("Ingrese el nombre de la persona: ")
 
     # Capturar al menos 100 fotos por persona
-    capture_photos(person_name, photos_per_person=100)
+    capture_photos(person_name, photos_per_person=200)
