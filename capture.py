@@ -34,8 +34,8 @@ def capture_photos(total_photo_count, sleep_time, emotion, initialIndex):
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    total_photo_count = 2
-    sleep_time = 0.5
+    total_photo_count = 20
+    sleep_time = 1
 
     if len(sys.argv) > 1:
         initialIndex = int(sys.argv[1])
