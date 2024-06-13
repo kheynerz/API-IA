@@ -7,5 +7,7 @@ def feeling_recognition():
     if 'Image' not in request.files:
         return jsonify({"error": "Image is required in Form Data"}), 400
     image = request.files['Image']
+    
+    print("Image received")
     face_analysis = recognize_feeling_from_image(image)
     return jsonify(face_analysis)
